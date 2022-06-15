@@ -49,28 +49,37 @@ figure {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    max-width: 500px;
-    max-height: 750px;
+    max-width: 400px;
+    max-height: 500px;
     cursor: pointer;
     margin:0 auto;
+    animation: mymove infinite;
+    animation-duration: 5s;
 
 
+}
+@keyframes mymove {
+  0%
+  {opacity: 0;}
+  30%
+  {opacity: 50;}
+  80%
+  {opacity: 100;}
+  100%{opacity: 0;}
 }
 
 img{
-	display: block;
+        transition: 0.25s;
         max-width: 100%;
         max-height: 100%;
-        animation-name: example;
-  	animation-duration: 1s;
+        border-radius: 1.5rem;
       }
 
 
-@keyframes example {
-  from {background-color: red;}
-  to {background-color: yellow;}
-}
 
+img:hover{
+    border-radius: 0px;
+}
 
 .sidebar {
   height: 100%;
@@ -154,16 +163,14 @@ img{
               document.getElementById("img").src = images[x];
           }
 
-
           function startTimer() {
-              setInterval(displayNextImage, 10000);
+              setInterval(displayNextImage, 5000);
           }
 
           var images = [], x = -1;
           images[0] = "img/1.jpg";
           images[1] = "img/2.jpg";
           images[2] = "img/3.jpg";
-
 
 
 
@@ -179,7 +186,7 @@ function closeNav() {
 </script>
    
         
-        <h1 class="title">TEST API</h1>
+        <h1 class="title" id="im">TEST API</h1>
         <br><br><br>
 	<div class="image">
 		<img id="img" alt="Slide Image" src="https://hddesktopwallpapers.in/wp-content/uploads/2015/09/goose-images.jpg"/>
